@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -34,6 +36,14 @@ public class ArticleListServlet extends HttpServlet {
 		Dao dao = new Dao();
 		//すべての記事のリストを取得．Article(記事)クラスはbeansパッケージに宣言してある．
 		List<Article> articleList = dao.getArticleList();
+		
+		//並び替え
+		Collections.sort(articleList, new Comparator<Article>() {
+            @Override
+            public int compare(Article a1, Article a2) {
+                return a2.getId() - a1.getId();
+            }
+        });
 
 		//requestに記事リストを格納．
 		request.setAttribute("articleList" , articleList);
