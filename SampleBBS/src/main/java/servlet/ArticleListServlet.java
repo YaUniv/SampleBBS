@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import beans.Article;
 import dao.Dao;
 
+//Presented by TanakaTakafumi
+
 //SampleBBS/ArticleListServletにアクセスすると，このサーブレットが動作
 @WebServlet("/ArticleListServlet")
 public class ArticleListServlet extends HttpServlet {
