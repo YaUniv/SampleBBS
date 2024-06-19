@@ -3,6 +3,8 @@ package beans;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+//あれこれ
+
 //記事を表すクラス
 public class Article implements Serializable{ //implements Serializableが必要
 	private int id; //すべての記事で一意な番号
